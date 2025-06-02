@@ -8,97 +8,91 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // CircleAvatar(
-            //   radius: 60.r,
-            //   backgroundImage: AssetImage('assets/QC.png'), // Replace later
-            // ),
-            // SizedBox(height: 20.h),
-            Center(
-              child: Container(
-                width: 350.w,
-                padding: EdgeInsets.all(16.w),
-                decoration: BoxDecoration(
-                  color: Color(AppColors.primaryColor),
-                  borderRadius: BorderRadius.circular(20.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 10.r,
-                    )
-                  ],
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    CircleAvatar(
-                      radius: 60.r,
-                      backgroundImage: AssetImage('assets/profile.jpg'), // Replace later
-                    ),
-                    SizedBox(height: 12.h),
-                    Text(
-                      'Md. Mainul Islam',
-                      style: TextStyle(
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Padding(
+          padding:  EdgeInsets.all(10.r),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/QC.png', // Replace with your background image
+                    fit: BoxFit.fill,
+                    height: 150.h,
+                    width: 75.w,
+                  ),
+                  SizedBox(width: 20.w),
+                  Container(
+                    height: 210.h,
+                    width: 1.w,
+                    color: Colors.grey[300],
+                  ),
+                  SizedBox(width: 10.w),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Md. Mainul Islam',
+                        style: TextStyle(
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 4.h),
-                    Text(
-                      'Software Engineer, Information Technology',
-                      style: TextStyle(fontSize: 14.sp, color: Colors.white,),
-                    ),
-                    SizedBox(height: 16.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {},
-                          child: Text('Save Contact', style: TextStyle(fontSize: 14.sp)),
+                      SizedBox(height: 4.h),
+                      RichText(
+                        text: TextSpan(
+                          style: TextStyle(fontSize: 8.sp, color: Colors.black),
+                          children: [
+                            TextSpan(
+                              text: 'Software Engineer',
+                              style: TextStyle(fontStyle: FontStyle.normal),
+                            ),
+                            // Add more TextSpan if needed
+                          ],
                         ),
-                        OutlinedButton(
-                          onPressed: () {},
-                          child: Text('Connect', style: TextStyle(fontSize: 14.sp, color: Colors.white)),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 20.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        socialIcon(Icons.facebook),
-                        socialIcon(Icons.link),
-                        socialIcon(Icons.video_call),
-                        socialIcon(Icons.mail),
-                      ],
-                    ),
-                    // SizedBox(height: 20.h),
-                    // Text(
-                    //   'Founder & Managing Director, INTRO Card Ltd. Bangladesh’s 1st NFC Smart Business Card. '
-                    //       'Professionally helping people grow their business network.',
-                    //   style: TextStyle(fontSize: 12.sp, color: Colors.white),
-                    //   textAlign: TextAlign.center,
-                    // ),
-                    SizedBox(height: 20.h),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        infoRow(Icons.email, 'md.mainul.islam@qcollection.com'),
-                        SizedBox(height: 6.h),
-                        infoRow(Icons.phone, '+8801521226758'),
-                        SizedBox(height: 6.h),
-                        infoRow(Icons.location_on, 'Concord IK Tower, Level 4 \nNorth Avenue, Gulshan 2, Dhaka-1212'),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                      SizedBox(height: 4.h),
+                      infoRow(Icons.phone, '+8801521226758'),
+                      SizedBox(height: 2.h),
+                      infoRow(Icons.email, 'md.mainul.islam@qcollection.com'),
+                      SizedBox(height: 2.h),
+                      infoRow(Icons.location_on, 'Concord IK Tower, Level 4 \nNorth Avenue, Gulshan 2, Dhaka-1212'),
+                    ],
+                  ),
+                ],
               ),
-            ),
-          ],
+              SizedBox(height: 18.h), // Spacing between content and buttons
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Save Contact',
+                      style: TextStyle(fontSize: 8.sp, color: Color(AppColors.primaryColor)),
+                    ),
+                  ),
+                  SizedBox(width: 10.w),
+                  OutlinedButton(
+                    onPressed: () {},
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: Colors.white), // optional border color
+                    ),
+                    child: Text(
+                      'Connect',
+                      style: TextStyle(fontSize: 8.sp, color: Colors.black),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -106,7 +100,7 @@ class HomeView extends StatelessWidget {
 
   Widget socialIcon(IconData icon) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 6.w),
+      padding: EdgeInsets.symmetric(horizontal: 4.w),
       child: CircleAvatar(
         radius: 18.r,
         backgroundColor: Colors.grey.shade200,
@@ -117,10 +111,11 @@ class HomeView extends StatelessWidget {
 
   Widget infoRow(IconData icon, String text) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(icon, size: 16.r, color: Colors.white),
-        SizedBox(width: 8.w),
-        Text(text, style: TextStyle(fontSize: 13.sp, color: Colors.white)),
+        Icon(icon, size: 20.r, color: Colors.black),
+        SizedBox(width: 4.w),
+        Text(text, style: TextStyle(fontSize: 6.sp, color: Colors.black)),
       ],
     );
   }
