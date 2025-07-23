@@ -41,9 +41,9 @@ dependencies:
   dio: ^5.8.0+1
   html: ^0.15.6
   animated_background: ^2.0.0
-  contacts_service: ^0.6.3
   permission_handler: ^11.3.1
   url_launcher: ^6.2.4
+  contact_add: ^0.0.3
 
 dev_dependencies:
   flutter_test:
@@ -69,9 +69,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/profile.jpg
     - assets/QC.png
-    - assets/logoBg.png
+    - assets/logobg.png
     - assets/QLogo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

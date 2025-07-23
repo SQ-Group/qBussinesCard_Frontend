@@ -118,14 +118,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.19.0"
-  contacts_service:
+  contact_add:
     dependency: "direct main"
     description:
-      name: contacts_service
-      sha256: f6d5ea33b31dfcdcd2e65d8abdc836502e04ddb0f66a96aa726fa9891ea9671e
+      name: contact_add
+      sha256: "4040db328c9bdd875a04c926adb83437765d2c3e1797e091525e0a6ed691418a"
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.3"
+    version: "0.0.3"
   convert:
     dependency: transitive
     description:
@@ -677,14 +677,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.0"
-  quiver:
-    dependency: transitive
-    description:
-      name: quiver
-      sha256: ea0b925899e64ecdfbf9c7becb60d5b50e706ade44a85b2363be2a22d88117d2
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.2.2"
   recase:
     dependency: transitive
     description:

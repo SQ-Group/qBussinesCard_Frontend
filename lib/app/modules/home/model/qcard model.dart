@@ -46,6 +46,7 @@ class Data {
   String? lastName;
   String? email;
   String? phone;
+  String? company;
   String? designation;
   String? department;
   String? gender;
@@ -63,6 +64,7 @@ class Data {
     this.lastName,
     this.email,
     this.phone,
+    this.company,
     this.designation,
     this.department,
     this.gender,
@@ -81,6 +83,7 @@ class Data {
     String? lastName,
     String? email,
     String? phone,
+    String? company,
     String? designation,
     String? department,
     String? gender,
@@ -98,6 +101,7 @@ class Data {
         lastName: lastName ?? this.lastName,
         email: email ?? this.email,
         phone: phone ?? this.phone,
+        company: company ?? this.company,
         designation: designation ?? this.designation,
         department: department ?? this.department,
         gender: gender ?? this.gender,
@@ -120,6 +124,7 @@ class Data {
     lastName: json["LastName"],
     email: json["Email"],
     phone: json["Phone"],
+    company: json["Company"],
     designation: json["Designation"],
     department: json["Department"],
     gender: json["Gender"],
@@ -138,6 +143,7 @@ class Data {
     "LastName": lastName,
     "Email": email,
     "Phone": phone,
+    "Company": company,
     "Designation": designation,
     "Department": department,
     "Gender": gender,

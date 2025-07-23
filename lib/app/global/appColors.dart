@@ -1,3 +1,3 @@
 class AppColors{
-  static const primaryColor = 0xff993399; // Green
+  static const primaryColor = 0xff664356; // Green
 }
