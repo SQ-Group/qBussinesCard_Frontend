@@ -3,14 +3,11 @@ import 'package:contact_add/contact_add.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:qbussiness_card/app/global/appColors.dart';
 import 'package:qbussiness_card/app/modules/home/controllers/home_controller.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../../global/contactSaver.dart';
 import '../model/qcard model.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'dart:html' as html;
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -69,7 +66,7 @@ class HomeView extends GetView<HomeController> {
                           boxShadow: [
                             BoxShadow(
                               color: Color(AppColors.primaryColor)
-                                  .withOpacity(0.5),
+                                  .withValues(alpha: 0.5),
                               spreadRadius: 2,
                               blurRadius: 8,
                               offset: const Offset(0, 4),
@@ -112,31 +109,9 @@ class HomeView extends GetView<HomeController> {
                           child: ElevatedButton(
                             onPressed: () async {
                               if (kIsWeb) {
-                                // Web solution: Create downloadable vCard
-                                final nowUtc =
-                                    DateTime.now().toUtc().toIso8601String();
-                                final vCard = '''
-BEGIN:VCARD
-VERSION:3.0
-REV:$nowUtc
-N;CHARSET=utf-8:${data.lastName ?? ''};${data.firstName ?? ''};;;
-FN;CHARSET=utf-8:${data.firstName ?? ''} ${data.lastName ?? ''}
-TITLE;CHARSET=utf-8:${data.designation ?? ''}
-ORG;CHARSET=utf-8:${data.company ?? ''}
-ADR;WORK;POSTAL;CHARSET=utf-8:;;${data.officeAddress ?? ''}
-TEL;TYPE=CELL:${data.phone ?? ''}
-EMAIL;MAILTO:${data.email ?? ''}
-END:VCARD
-''';
-
-                                final blob = html.Blob([vCard], 'text/vcard');
-                                final url =
-                                    html.Url.createObjectUrlFromBlob(blob);
-                                final anchor = html.AnchorElement(href: url)
-                                  ..setAttribute("download",
-                                      "${data.firstName}_contact.vcf")
-                                  ..click();
-                                html.Url.revokeObjectUrl(url);
+                                // For web platform, show a message that download is not available
+                                // in this simplified version, or you can implement with url_launcher
+                                Get.snackbar("Info", "vCard download feature is only available on mobile via contact saving");
                               } else {
                                 // Mobile solution: Use contact_add plugin
                                 try {
