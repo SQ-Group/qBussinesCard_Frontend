@@ -28,17 +28,17 @@ class HomeView extends GetView<HomeController> {
       ),
       body: Stack(
         children: [
-          Positioned(
-            bottom: 0.h,
-            left: 0.w,
-            child: Image.asset(
-              'assets/logoBg.png',
-              color: Color(AppColors.primaryColor),
-              height: (MediaQuery.sizeOf(context).height / 2) - 80.h,
-              // width: (MediaQuery.sizeOf(context).width/2) + 20.w,
-              fit: BoxFit.contain,
-            ),
-          ),
+          // Positioned(
+          //   bottom: 0.h,
+          //   left: 0.w,
+          //   child: Image.asset(
+          //     'assets/logoBg.png',
+          //     color: Color(AppColors.primaryColor),
+          //     height: (MediaQuery.sizeOf(context).height / 2) - 80.h,
+          //     // width: (MediaQuery.sizeOf(context).width/2) + 20.w,
+          //     fit: BoxFit.contain,
+          //   ),
+          // ),
           Padding(
             padding: EdgeInsets.only(bottom: 20.h),
             child: InteractiveViewer(
